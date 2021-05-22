@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 
@@ -7,7 +7,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements AfterViewInit{
   title = 'test-app';
   @ViewChild('content') modalRef: TemplateRef<any>;
  
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
     this.modalService.show(content);
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     console.log("Template", this.modalRef);
   }
 }
