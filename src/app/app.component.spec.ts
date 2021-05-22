@@ -18,13 +18,11 @@ import { AppComponent } from './app.component';
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
-  selector: 'w',
   template: `
     <div>
       <ng-container *ngTemplateOutlet="modal"> </ng-container>
     </div>
-    <app-root> </app-root>
-    {{ modal }}=
+    <app-root> </app-root> 
   `,
 })
 class WrapperComponent implements AfterViewInit {
